@@ -560,8 +560,7 @@ data:
 
 Once the Beats have been deployed, Data will start flowing to Elasticsearch and you will be able to see data in Kibana.
 
-![Unknown-4](https://user-images.githubusercont![Unknown-5](https://user-images.githubusercontent.com/46498945/198678384-556adc73-a78b-45f1-a47e-ac2a120ed112.png)
-ent.com/46498945/198678368-205e49af-c9e1-43ff-a289-ca600a04a57b.png)
+![Screen Shot 2022-10-28 at 1 09 22 PM](https://user-images.githubusercontent.com/46498945/198694044-aefad63a-78ad-46ae-bd5c-7a5c59de7398.png)
 
-![Unknown-3](https://user-images.githubusercontent.com/46498945/198678357-c9fb88c6-efc9-4b7a-b48b-44c8f137cb0c.png)
+![Screen Shot 2022-10-28 at 1 13 43 PM](https://user-images.githubusercontent.com/46498945/198694661-134542cd-ca88-4517-b347-f68dae07c5ca.png)
 
