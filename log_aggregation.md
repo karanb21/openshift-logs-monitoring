@@ -1,11 +1,14 @@
+# Log aggregation and monitoring for Openshift
+
 To gather logs and monitor them on openshift, we use Filebeat. You deploy Filebeat as a DaemonSet to ensure there’s a running instance on each node of the cluster.
 
-**Filebeat overview**
+## Filebeat overview
 
 Filebeat is a lightweight shipper for forwarding and centralizing log data. Installed as an agent on your servers, Filebeat monitors the log files or locations that you specify, collects log events, and forwards them either to Elasticsearch or Logstash for indexing.
 
 Here’s how Filebeat works: When you start Filebeat, it starts one or more inputs that look in the locations you’ve specified for log data. For each log that Filebeat locates, Filebeat starts a harvester. Each harvester reads a single log for new content and sends the new log data to libbeat, which aggregates the events and sends the aggregated data to the output that you’ve configured for Filebeat.
 
+![Unknown-2](https://user-images.githubusercontent.com/46498945/198677758-7ceaf93a-9b49-4952-bab4-6e205dba0fe2.png)
 
 
 Everything is deployed under the kube-system namespace by default. To change the namespace, modify the manifest file.
@@ -14,7 +17,7 @@ To download the manifest file, run:
 ```
 curl -O https://raw.githubusercontent.com/elastic/beats/8.4/deploy/kubernetes/filebeat-kubernetes.yaml
 ```
-<details><summary>**Sample Manifest file for filebeat**:</summary>
+**<details><summary>Sample Manifest file for filebeat:</summary>**
 
 ```
 ---
@@ -317,9 +320,9 @@ NAME       DESIRED   CURRENT   READY     UP-TO-DATE   AVAILABLE   NODE-SELECTOR 
 filebeat   32        32        0         32           0           <none>   
 ```
 
-_You can also deploy metricbeat to the cluster to get extra Openshift cluster too. Install metricbeat via metricbeat-kubernetes.yaml_
+### You can also deploy metricbeat to the cluster to get extra Openshift cluster too. Install metricbeat via [metricbeat-kubernetes.yaml](https://github.com/elastic/beats/blob/master/deploy/kubernetes/metricbeat-kubernetes.yaml)
 
-<details><summary>**Sample Manifest file for Metricbeat:**</summary>
+**<details><summary>Sample Manifest file for Metricbeat:</summary>**
 
 ```
 ---
@@ -557,5 +560,8 @@ data:
 
 Once the Beats have been deployed, Data will start flowing to Elasticsearch and you will be able to see data in Kibana.
 
+![Unknown-4](https://user-images.githubusercont![Unknown-5](https://user-images.githubusercontent.com/46498945/198678384-556adc73-a78b-45f1-a47e-ac2a120ed112.png)
+ent.com/46498945/198678368-205e49af-c9e1-43ff-a289-ca600a04a57b.png)
 
+![Unknown-3](https://user-images.githubusercontent.com/46498945/198678357-c9fb88c6-efc9-4b7a-b48b-44c8f137cb0c.png)
 
